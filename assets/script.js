@@ -1,13 +1,3 @@
-/**
- * 
- * Pseudocode: 
- * 1. Ask user for their input (rock, paper or scissors) : Case-Insensitive.
- * 3. Make computer choose any random choice.
- * 4. Compare and make one win. 
- * 5. Increment their scores, such that- 
- *  5.1. After they play 5 rounds- declare a winner or draw.
- */
-
 let humanScore = 0;
 let machineScore = 0;
 let roundNo = 0;
@@ -25,9 +15,6 @@ const beats = {
     "paper": "rock"
 };
 
-/**
- * Note: I wish I could use something like global variable inside a class with get/set methods, but I'm not too far in JS. 
- * */
 let resetScoreAndRound = () => {
     humanScore = 0;
     machineScore = 0;
@@ -55,7 +42,7 @@ let getHumanChoice = () => {
     return null;
 };
 
-let printInfo = (winner) => {
+let printResults = (winner) => {
 
     let statement = "";
     if (winner === "draw") {
@@ -77,25 +64,20 @@ let executeRound = (humanChoice, machineChoice) => {
 
     ++roundNo;
     if (humanChoice === machineChoice) {
-        // No points awarded.
-        printInfo("draw");
+        printResults("draw");
     }
     else if (beats[humanChoice] === machineChoice) {
         ++humanScore;
-        printInfo("human");
+        printResults("human");
     }
     else if (beats[machineChoice] === humanChoice) {
         ++machineScore;
-        printInfo("machine");
+        printResults("machine");
     }
 
     return;
 };
 
-/**
- * Description: A game will have 5 Rounds of RPS.
- * Note: We'll increment the score as said.
- */
 let playGame = () => {
 
     resetScoreAndRound();
