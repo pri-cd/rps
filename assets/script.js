@@ -84,13 +84,13 @@ function displayResults() {
 
 function playGame(humanChoice) {
     ++numRounds;
-    console.log(`> Results @ Round: ${numRounds} is > 
-        "${executeLogicForGame(humanChoice, getMachineChoice())}"`);
+    let machineChoice = getMachineChoice();
+    console.log(`> Results @ Round: ${numRounds} is > "${executeLogicForGame(humanChoice, machineChoice)}" (Human: ${humanChoice}, Machine: ${machineChoice})`);
 
-    if (numRounds === 5) {
+    if (numRounds === NO_OF_ROUNDS) {
         displayResults();
         resetScoreAndRound();
-        
+
     }
 }
 
@@ -101,13 +101,22 @@ function addButtonListeners() {
     div.addEventListener('click', (event) => {
         let target = event.target;
 
+        if (event.target.tagName == "IMG") {
+            target = event.target.parentElement;
+        }
+
         switch (target.id) {
             case "r":
+                playGame("rock");
+                break;
             case "p":
+                playGame("paper");
+                break;
             case "s":
-                playGame(event.target.textContent.toLowerCase());
+                playGame("scissors");
                 break;
             default:
+                console.log(event);
                 break;
         }
     });
