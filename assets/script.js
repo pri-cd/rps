@@ -1,11 +1,12 @@
-let humanScore = 0;
-let machineScore = 0;
-let numRounds = 0;
-
 const MSG_HUMAN_WIN = "Human Wins";
 const MSG_MACHINE_WIN = "Machine Wins";
 const MSG_DRAW = "Draw";
 const NO_OF_ROUNDS = 5;
+
+
+let humanScore = 0;
+let machineScore = 0;
+let numRounds = 0;
 
 
 function removeResultsIfExists() {
@@ -84,7 +85,7 @@ function displayResults() {
 function playGame(humanChoice) {
     ++numRounds;
     console.log(`> Results @ Round: ${numRounds} is > 
-        "${executeLogicForGame(getMachineChoice(), humanChoice)}"`);
+        "${executeLogicForGame(humanChoice, getMachineChoice())}"`);
 
     if (numRounds === 5) {
         displayResults();
