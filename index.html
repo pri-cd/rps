@@ -10,7 +10,7 @@
 </head>
 
 <body>
-    <div class="header">
+    <div class="header headingText">
         <div class="logo"><img src="./assets/rps-logo.png" alt=""></div>
         <div class="title">Rock Paper Scissors</div>
     </div>
@@ -21,7 +21,24 @@
             <div id="p" class="rpsButtons"><img src="./assets/paper.svg" alt=""></div>
             <div id="s" class="rpsButtons"><img src="./assets/scissors.svg" alt=""></div>
         </div>
-        <div id="results" class="resultsContainer"></div>
+
+        <div id="infoHolder" class="infoHolder">
+            <div id="resultsContainer" class="resultsContainer">
+
+                <div id="humanInfoHolder" class="playerInfoHolder">
+                    <div class="headingText">Player</div>
+                </div>
+
+                <div id="machineInfoHolder" class="playerInfoHolder">
+                    <div class="headingText">Machine</div>
+                </div>
+
+            </div>
+            <div id="utilityInfoHolder" class="utilityInfoHolder">
+                <div id="resultMessage" class="center scoreText"></div>
+                <div id="resetGameButton" class="center">Reset Game</div>
+            </div>
+        </div>
     </div>
 
     <div class="footer">
