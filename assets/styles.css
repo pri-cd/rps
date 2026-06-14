@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Londrina+Shadow&family=Luckiest+Guy&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
 
 :root {
     --primary-color: #334252;
@@ -154,8 +154,8 @@ body {
 /* Handling Reset Button! */
 .scoreText {
     color: var(--tertiary-color);
-    font-size: large;
     font-weight: 600;
+    font-size: x-large;
 }
 
 .utilityInfoHolder {
@@ -169,16 +169,17 @@ body {
 #resetGameButton {
     background-color: var(--tertiary-color);
     font-size: large;
-    padding: 5px;
+    padding: 5px 10px 5px 10px;
     margin-bottom: 5px;
     border: 2px solid var(--secondary-color);
     border-radius: 5px;
+    text-align: center;
 }
 
 #resetGameButton:hover {
 
     box-shadow: inset 0px 0px 10px 5px #ffbe0b,
-    0px 0px 10px 2px red;
+        0px 0px 10px 2px red;
 }
 
 #resultMessage {
@@ -189,8 +190,20 @@ body {
 .footer {
     display: flex;
     flex-direction: row;
-    justify-content: center;
 
     font-size: medium;
     background-color: var(--secondary-color);
+    height: 30px;
+}
+
+
+.attribution
+{
+    margin: auto 10px;
+}
+.attribution a
+{
+    text-decoration: inherit;
+    color: inherit;
+    font-size: 14px;
 }
